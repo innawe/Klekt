@@ -41,7 +41,7 @@ for index, x in enumerate(all_divs):
     i = index + 1
     a = x.find("a")["href"]
     b = x.find("img")["title"]
-    c = x.find("span", {"class":"k-item--price"}).text.replace(u'\u20ac','')
+    c = x.find("span", {"class":"k-item--price"}).text.replace(u'\u20ac','').replace("\n","")
     d = x.find("span", {"class":"k-item--sizes"}).text
     my_dict = {'n': i, 'link': a, 'title': b, 'price': c, 'size':d}
     items.append(my_dict)
